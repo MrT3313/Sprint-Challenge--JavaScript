@@ -98,7 +98,9 @@ const graduates = [
   for (i = 0; i < universities.length; i++) {
     if (i === 0 ) { // FIRST ITERATION -- NOTHING IN universitiesSORT
         i
-      universitiesSORT.push(universities[0]);
+        console.log(typeof(universitiesSORT))
+        console.log(typeof(universities[0]))
+        universitiesSORT.push(universities[0]);
       universitiesSORT
     } else if (i === 1) {
         // 2nd ITERATION -- 1 item in universitySORT
@@ -117,21 +119,38 @@ const graduates = [
         }
     } else {
       // MY ERROR IS SOMEWHERE IN HERE :(
-      // 3+ ITERATION -- 1 item in universitySORT
-      i
-      console.log(universitiesSORT.length)
-      
+      // 3+ ITERATION -- 2+ items in universitySORT
       for (z = 0; z < universitiesSORT.length; z++) {
-        i
-        z
-        if (universities[i] > universitiesSORT[z] && universities[i] < universitiesSORT[z+1]) {
-          //universitiesSORT.splice(universitiesSORT.indexOf(universitiesSORT[z]),0,universities[i])
+        console.log(universitiesSORT)
+        console.log(typeof(universitiesSORT))
+        
+        console.log(universitiesSORT.length)
+        
+        console.log(universities[i].localeCompare(universitiesSORT[z]))
+        console.log(universities[i].localeCompare(universitiesSORT[z+1]))
+        
+        if ( (universities[i].localeCompare(universitiesSORT[z])) === -1 && (universities[i].localeCompare(universitiesSORT[z+1])) === -1 ) {
+          
+          console.log(universitiesSORT.indexOf(universitiesSORT[z]))
+          universitiesSORT.splice(universitiesSORT.indexOf(universitiesSORT[z],0,universities[i]))
         }
+      
+        // // ERROR @ 5th Iteration
+        //   console.log(universities[4])
+        //   console.log(universitiesSORT[z])
+        //   console.log(universitiesSORT[z+1])
+
+        // if ( (universities[i].localeCompare(universitiesSORT[z])) === -1 ) {
+        //   universitiesSORT.splice(universitiesSORT[z],0,universities[i])
+        //   break;
+        // } else if ( (universities[i].localeCompare(universitiesSORT[z])) === 1 ) {
+        //   universitiesSORT.splice(universitiesSORT[z+1],0,universities[i])
+        //   break;
+        // }
       }
     }
+    console.log(universitiesSORT)
   }
-
-  console.log(universitiesSORT)
 
 
   /* 
@@ -260,4 +279,3 @@ console.log(populationTotal);
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
-
