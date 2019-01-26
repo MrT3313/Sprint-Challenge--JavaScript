@@ -95,6 +95,43 @@ const graduates = [
 
   const universitiesSORT = [];
   
+  for (i = 0; i < universities.length; i++) {
+    if (i === 0 ) { // FIRST ITERATION -- NOTHING IN universitiesSORT
+        i
+      universitiesSORT.push(universities[0]);
+      universitiesSORT
+    } else if (i === 1) {
+        // 2nd ITERATION -- 1 item in universitySORT
+        i
+        console.log(universitiesSORT)
+        console.log(universitiesSORT[0])
+        console.log(universities[i])
+        console.log(universitiesSORT[0] < universities[i])
+        
+        if (universitiesSORT[0] < universities[i]) {
+          universitiesSORT.push(universities[i])
+          console.log(universitiesSORT)
+        } else {
+          universitiesSORT.unshift(universities[i])
+          console.log(universitiesSORT)
+        }
+    } else {
+      // MY ERROR IS SOMEWHERE IN HERE :(
+      // 3+ ITERATION -- 1 item in universitySORT
+      i
+      console.log(universitiesSORT.length)
+      
+      for (z = 0; z < universitiesSORT.length; z++) {
+        i
+        z
+        if (universities[i] > universitiesSORT[z] && universities[i] < universitiesSORT[z+1]) {
+          //universitiesSORT.splice(universitiesSORT.indexOf(universitiesSORT[z]),0,universities[i])
+        }
+      }
+    }
+  }
+
+  console.log(universitiesSORT)
 
 
   /* 
