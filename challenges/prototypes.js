@@ -7,7 +7,6 @@
   Create a constructor function named CuboidMaker that accepts properties for length, width, and height
 */
 
-  // BUILT WITH PROROTYPES NOT CLASSES
   function CuboidMaker (cuboidAttributes) {
     this.length = cuboidAttributes.length;
     this.width = cuboidAttributes.width;
