@@ -15,10 +15,7 @@
         weightUnits: 'kg',
       length: 12,
         lengthUnits: 'm',
-      period: 'Late Cretaceious',
-      roar = function (roarText) {
-        console.log(roarText);
-      }
+      period: 'Late Cretaceious'
     }
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
@@ -58,16 +55,18 @@ console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-
-console.log(tyrannosaurus);
-
-
+tyrannosaurus.roar = function(roarText) {
+  return roarText
+}
+console.log(tyrannosaurus.roar('RAWERSRARARWERSARARARRRR'))
 
 // ==== Arrays ====
 
-// Given an array of college graduates.  Complete the following requests WITHOUT using any array methods like .forEach(), .map(), .reduce(), .filter()
+// Given an array of college graduates.  Complete the following requests WITHOUT using any array methods 
+// like .forEach(), .map(), .reduce(), .filter()
 
-const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern State College","email":"ctorry0@macromedia.com"},
+const graduates = [
+{"id":1,"first_name":"Cynde","university":"Missouri Southern State College","email":"ctorry0@macromedia.com"},
 {"id":2,"first_name":"Saundra","university":"The School of the Art Institute of Chicago","email":"swhal1@state.gov"},
 {"id":3,"first_name":"Lambert","university":"Marian College","email":"lparham2@techcrunch.com"},
 {"id":4,"first_name":"Modestine","university":"International Medical & Technological University","email":"mdolder3@symantec.com"},
@@ -80,9 +79,44 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
-Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
-console.log(universities)
+  Once you have the new array created, sort the universities alphabetically and log the result. */
+  const universities = [];
+
+  for (i = 0; i < graduates.length; i++) {
+    universities.push(graduates[i].university)
+  } 
+  console.log(universities)
+  console.log(universities.length)
+  
+  console.log(graduates[0].university)
+  console.log(graduates[1].university)
+  console.log(graduates[0].university > graduates[1].university)
+  console.log(graduates[0].university < graduates[1].university)
+
+  const universitiesSORT = [];
+  
+
+
+  /* 
+  for (i = 0; i < universities.length; i++) {
+    if ( i === 0) {
+      universitiesSORT
+      universitiesSORT.push(graduates[i].university)
+      universitiesSORT
+    } else {
+        console.log(universitiesSORT.length) 
+        for (z = 0; z < universitiesSORT.length; z++) {
+          if (universitiesSORT[z].university < graduates[i].university) {
+            universitiesSORT.splice(universitiesSORT[z], 0, graduates[i].university)
+            } else {
+              universitiesSORT.splice(universitiesSORT[z+1], 0, graduates[i].university)
+            }
+          }
+        }
+      }
+    console.log(universitiesSORT)
+
+* / 
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -91,11 +125,21 @@ Name email@example.com
 
 Log the result of your new array. */
 const contactInfo = [];
-console.log(contactInfo);
 
+for (i = 0; i < graduates.length; i++) {
+  contactInfo.push(graduates[i].first_name + ' ' + graduates[i].email)
+} 
+console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
+
+for (i = 0; i < graduates.length; i++) {
+  
+  if (graduates[i].university.includes('Uni') === true ) {
+    uni.push(graduates[i].university)
+  }
+} 
 console.log(uni);
 
 
