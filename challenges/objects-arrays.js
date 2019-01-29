@@ -84,95 +84,49 @@ const graduates = [
 
   for (i = 0; i < graduates.length; i++) {
     universities.push(graduates[i].university)
-  } 
-  console.log(universities)
-  console.log(universities.length)
-  
-  console.log(graduates[0].university)
-  console.log(graduates[1].university)
-  console.log(graduates[0].university > graduates[1].university)
-  console.log(graduates[0].university < graduates[1].university)
-
-  const universitiesSORT = [];
-  
-  for (i = 0; i < universities.length; i++) {
-    if (i === 0 ) { // FIRST ITERATION -- NOTHING IN universitiesSORT
-        i
-        console.log(typeof(universitiesSORT))
-        console.log(typeof(universities[0]))
-        universitiesSORT.push(universities[0]);
-      universitiesSORT
-    } else if (i === 1) {
-        // 2nd ITERATION -- 1 item in universitySORT
-        i
-        console.log(universitiesSORT)
-        console.log(universitiesSORT[0])
-        console.log(universities[i])
-        console.log(universitiesSORT[0] < universities[i])
-        
-        if (universitiesSORT[0] < universities[i]) {
-          universitiesSORT.push(universities[i])
-          console.log(universitiesSORT)
-        } else {
-          universitiesSORT.unshift(universities[i])
-          console.log(universitiesSORT)
-        }
-    } else {
-      // MY ERROR IS SOMEWHERE IN HERE :(
-      // 3+ ITERATION -- 2+ items in universitySORT
-      for (z = 0; z < universitiesSORT.length; z++) {
-        console.log(universitiesSORT)
-        console.log(typeof(universitiesSORT))
-        
-        console.log(universitiesSORT.length)
-        
-        console.log(universities[i].localeCompare(universitiesSORT[z]))
-        console.log(universities[i].localeCompare(universitiesSORT[z+1]))
-        
-        if ( (universities[i].localeCompare(universitiesSORT[z])) === -1 && (universities[i].localeCompare(universitiesSORT[z+1])) === -1 ) {
-          
-          console.log(universitiesSORT.indexOf(universitiesSORT[z]))
-          universitiesSORT.splice(universitiesSORT.indexOf(universitiesSORT[z],0,universities[i]))
-        }
-      
-        // // ERROR @ 5th Iteration
-        //   console.log(universities[4])
-        //   console.log(universitiesSORT[z])
-        //   console.log(universitiesSORT[z+1])
-
-        // if ( (universities[i].localeCompare(universitiesSORT[z])) === -1 ) {
-        //   universitiesSORT.splice(universitiesSORT[z],0,universities[i])
-        //   break;
-        // } else if ( (universities[i].localeCompare(universitiesSORT[z])) === 1 ) {
-        //   universitiesSORT.splice(universitiesSORT[z+1],0,universities[i])
-        //   break;
-        // }
-      }
-    }
-    console.log(universitiesSORT)
   }
 
+const universitiesSORT = universities.sort();
+console.log(universitiesSORT) 
 
-  /* 
-  for (i = 0; i < universities.length; i++) {
-    if ( i === 0) {
-      universitiesSORT
-      universitiesSORT.push(graduates[i].university)
-      universitiesSORT
-    } else {
-        console.log(universitiesSORT.length) 
-        for (z = 0; z < universitiesSORT.length; z++) {
-          if (universitiesSORT[z].university < graduates[i].university) {
-            universitiesSORT.splice(universitiesSORT[z], 0, graduates[i].university)
-            } else {
-              universitiesSORT.splice(universitiesSORT[z+1], 0, graduates[i].university)
-            }
-          }
-        }
-      }
-    console.log(universitiesSORT)
-
-* / 
+  // Sort WITHOUT SORT attempt
+  // for (i = 0; i < universities.length; i++) {
+  //   if (i === 0 ) { // FIRST ITERATION -- NOTHING IN universitiesSORT
+  //       i
+  //       universitiesSORT.push(universities[0]);
+  //     universitiesSORT
+  //   } else if (i === 1) {
+  //       // 2nd ITERATION -- 1 item in universitySORT
+  //       i
+  //       console.log(universitiesSORT)
+  //       console.log(universitiesSORT[0])
+  //       console.log(universities[i])
+  //       console.log(universitiesSORT[0] < universities[i])
+        
+  //       if (universitiesSORT[0] < universities[i]) {
+  //         universitiesSORT.push(universities[i])
+  //         console.log(universitiesSORT)
+  //       } else {
+  //         universitiesSORT.unshift(universities[i])
+  //         console.log(universitiesSORT)
+  //       }
+  //   } else {
+  //     // MY ERROR IS SOMEWHERE IN HERE :(
+  //     // 3+ ITERATION -- 2+ items in universitySORT
+  //     for (z = 0; z < universitiesSORT.length; z++) {
+  //       console.log(universitiesSORT)
+  //       console.log(typeof(universitiesSORT))
+        
+  //       console.log(universitiesSORT.length)
+        
+  //       console.log(universities[i].localeCompare(universitiesSORT[z]))
+  //       console.log(universities[i].localeCompare(universitiesSORT[z+1]))
+        
+  //       if ( (universities[i].localeCompare(universitiesSORT[z])) === -1 && (universities[i].localeCompare(universitiesSORT[z+1])) === -1 ) {
+          
+  //         console.log(universitiesSORT.indexOf(universitiesSORT[z]))
+  //         universitiesSORT.splice(universitiesSORT.indexOf(universitiesSORT[z],0,universities[i]))
+  //       }
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -192,7 +146,7 @@ const uni = [];
 
 for (i = 0; i < graduates.length; i++) {
   
-  if (graduates[i].university.includes('Uni') === true ) {
+  if (graduates[i].university.includes('Uni')) {
     uni.push(graduates[i].university)
   }
 } 
@@ -245,13 +199,9 @@ Create a new array named lowerCase and map over each name to convert them all to
 
   // VERSION 2 - Using Map
     const lowerCase = zooAnimals.map( (animal) => {
-      return {animal_name: animal.animal_name};
+      return animal.animal_name.toLowerCase();
     });
-
-    lowerCase.forEach( (animal) => {
-      lowerCase.push(animal.animal_name.toLowerCase())
-    })
-    console.log(lowerCase); 
+    console.log(lowerCase) 
 
 /* Request 3: .filter() 
 

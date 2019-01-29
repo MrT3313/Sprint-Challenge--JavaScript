@@ -7,12 +7,12 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
-const consume = function (argument1, argument2, callback) {
-  callback(`${argument1} & ${argument2} ate ${callback} this morning`)
+const consume = function (banana, argument2, callback) {
+  return callback(banana,argument2)
 }
 
-const breakfast = function () {
-  return 'eggs & bacon'
+const breakfast = function (argument1,argument2) {
+  return `${argument1} & ${argument2} ate this morning`
 }
 
 console.log(consume('Jane', 'TheHunk', breakfast))

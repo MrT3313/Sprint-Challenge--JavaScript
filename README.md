@@ -53,6 +53,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
     2) IMPLICIT BINDING
     -When a function is CALLED by a preceding dot -- 'this' = [object LEFT of dot]
+    
 
     3) NEW BINDING
     -When a constructor function is used -- 'this' = specific instance of the object that is created & returned by constructor function
