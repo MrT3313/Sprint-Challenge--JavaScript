@@ -7,6 +7,17 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
+const consume = function (banana, argument2, callback) {
+  return callback(banana,argument2)
+}
+
+const breakfast = function (argument1,argument2) {
+  return `${argument1} & ${argument2} ate this morning`
+}
+
+console.log(consume('Jane', 'TheHunk', breakfast))
+
+
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -25,7 +36,12 @@
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
+
 // Explanation: 
+/*   
+  nestedfunction() can access the variable because when the function is called it is in the lexical
+  scope of myFunction, thus giving it access to the 'internal' variable 
+*/
 
 
 const external = "I'm outside the function";
