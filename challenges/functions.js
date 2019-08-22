@@ -17,6 +17,9 @@
   }
   HOC('taco', 'jelly', printCallback)
 
+// -- *** -- //
+// -- *** -- //
+
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
@@ -41,27 +44,31 @@
     return `Hello ${f_name} ${l_name}, nice to meet you!`
   }
 
+// -- *** -- //
+// -- *** -- //
+
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-HOC(2,2,sum_callback); // 4
-HOC(10,16,multiply_callback); // 160
-HOC("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+  HOC(2,2,sum_callback); // 4
+  HOC(10,16,multiply_callback); // 160
+  HOC("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+
+// -- *** -- //
+// -- *** -- //
 
 // ==== Closures ==== 
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
   // -- the nested function is declared @ or below the nested scope of `ìnternal` variable declaration 
+  const external = "I'm outside the function";
 
+  function myFunction() {
+    console.log(external);
+    const internal = "Hello! I'm inside myFunction!";
 
-const external = "I'm outside the function";
-
-function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
-
-  function nestedFunction() {
-    console.log(internal);
-  };
-  nestedFunction();
-}
-myFunction();
+    function nestedFunction() {
+      console.log(internal);
+    };
+    nestedFunction();
+  }
+  myFunction();
